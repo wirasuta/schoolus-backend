@@ -5,9 +5,8 @@ const app = express()
 app.use(express.urlencoded({ extended: true }))
 
 app.get('/', (req, res) => {
-    console.log(req.body)
-    console.log(req.query)
-    res.send('Hello world')
+    const { q = 'World' } = req.query
+    res.send(`Hello ${q}!`)
 })
 
 app.listen(port, () => console.log(`Ready at port ${port}`))
