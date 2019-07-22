@@ -15,5 +15,10 @@
         },
         "src": "/.*",
         "dest": "/index.js"
-    }]
+    }],
+    "env": {
+        "DB_USER": "schoolus",
+        "DB_PASSWORD": "@db-schoolus-pass",
+        "DB_NAME": "schoolus"
+    }
 }
