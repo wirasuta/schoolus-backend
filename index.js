@@ -39,7 +39,7 @@ app.get('/wait/:time', async (req, res) => {
 })
 
 app.get('/', (req, res) => {
-    const { q = 'World' } = req.query
+    const { q = 'Gan' } = req.query
     res.send(`Hello ${q}!`)
 })
 
