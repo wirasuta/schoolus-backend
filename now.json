@@ -1,24 +1,28 @@
 {
-    "version": 2,
-    "public": true,
-    "builds": [
-        {
-            "src": "index.js",
-            "use": "@now/node-server"
-        }
-    ],
-    "routes": [{
-        "headers": {
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
-            "Access-Control-Allow-Headers": "X-Requested-With, Content-Type, Accept"
-        },
-        "src": "/.*",
-        "dest": "/index.js"
-    }],
-    "env": {
-        "DB_USER": "schoolus",
-        "DB_PASSWORD": "@db-schoolus-pass",
-        "DB_NAME": "schoolus"
+  "version": 2,
+  "public": true,
+  "builds": [
+    {
+      "src": "index.js",
+      "use": "@now/node-server"
     }
+  ],
+  "routes": [
+    {
+      "headers": {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+        "Access-Control-Allow-Headers": "X-Requested-With, Content-Type, Accept"
+      },
+      "src": "/.*",
+      "dest": "/index.js"
+    }
+  ],
+  "env": {
+    "DB_USER": "schoolus",
+    "DB_PASSWORD": "@db-schoolus-pass",
+    "DB_NAME": "schoolus"
+  },
+  "alias": ["api.wirasuta.blog"],
+  "regions": ["sin1"]
 }
