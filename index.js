@@ -1,18 +1,16 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const graphqlHTTP = require('express-graphql')
+const bodyParser = require('body-parser')
 
 const schema = require('./graphql/schema')
-
-const User = require('./models/User')
-const Record = require('./models/AcdRecord')
-const Session = require('./models/FocusSess')
-const Mark = require('./models/Mark')
 
 const { DB_USER, DB_PASSWORD, DB_NAME, PORT } = process.env
 const port = PORT || 3000
 
 const app = express()
+
+app.use(bodyParser.json())
 
 app.use(
   '/graphql',
