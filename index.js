@@ -1,7 +1,7 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const graphqlHTTP = require('express-graphql')
-const bodyParser = require('body-parser-graphql')
+const bodyParser = require('body-parser')
 
 const schema = require('./graphql/schema')
 
@@ -10,7 +10,7 @@ const port = PORT || 3000
 
 const app = express()
 
-app.use(bodyParser.graphql())
+app.use(bodyParser.json())
 
 app.use(
   '/graphql',
