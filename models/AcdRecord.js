@@ -23,16 +23,6 @@ const acdRecordSchema = new mongoose.Schema({
     ],
     required: true
   },
-  marks: {
-    type: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Mark',
-        required: true
-      }
-    ],
-    required: true
-  },
   user: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',

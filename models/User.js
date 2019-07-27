@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 const userSchema = new mongoose.Schema({
-  name: {
+  user_name: {
     type: String,
     required: true,
     unique: true
@@ -23,7 +23,18 @@ const userSchema = new mongoose.Schema({
   password: {
     type: String,
     required: true
-  }
+  },
+  points: {
+    type: Number,
+    default: 0
+  },
+  own_voucher: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Voucher',
+      required: true
+    }
+  ]
 })
 
 module.exports = mongoose.model('User', userSchema)
