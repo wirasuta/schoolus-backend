@@ -78,7 +78,9 @@ UserTC.addResolver({
       '_id available price'
     )
     if (!voucher || voucher.available <= 0) throw new Error('Voucher invalid')
-    if (user.own_voucher.includes(voucher._id)) { throw new Error('You already own this voucher') }
+    if (user.own_voucher.includes(voucher._id)) {
+      throw new Error('You already own this voucher')
+    }
     if (user.points < voucher.price) throw new Error('Insufficent points')
     const voucerupd = await Voucher.updateOne(
       { _id: voucher._id },
@@ -141,6 +143,8 @@ schemaComposer.Query.addFields({
   authUser: AuthTC.getResolver('authUser'),
 
   ...authAccess({
+    userById: UserTC.getResolver('findById'),
+
     sessionById: SessionTC.getResolver('findById'),
     sessionByIds: SessionTC.getResolver('findByIds'),
     sessionOne: SessionTC.getResolver('findOne'),
